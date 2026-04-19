@@ -1,0 +1,28 @@
+#!/bin/sh
+
+IFACE=$(/usr/bin/ip route | /usr/bin/awk '/default/ {print $5}')
+
+RX1=$(cat /sys/class/net/$IFACE/statistics/rx_bytes)
+TX1=$(cat /sys/class/net/$IFACE/statistics/tx_bytes)
+
+sleep 1
+
+RX2=$(cat /sys/class/net/$IFACE/statistics/rx_bytes)
+TX2=$(cat /sys/class/net/$IFACE/statistics/tx_bytes)
+
+RX_KB=$(( (RX2 - RX1) / 1024 ))
+TX_KB=$(( (TX2 - TX1) / 1024 ))
+
+format_speed() {
+    if [ "$1" -ge 1024 ]; then
+        printf "%3sM" $(( $1 / 1024 ))
+    else
+        printf "%3sK" "$1"
+    fi
+}
+
+RX=$(format_speed "$RX_KB")
+TX=$(format_speed "$TX_KB")
+
+printf " %s  %s" "$RX" "$TX"
+

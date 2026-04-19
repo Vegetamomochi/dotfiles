@@ -1,0 +1,5 @@
+! --- dmenu colors (MATCH WAL) ---
+dmenu.background:  #0e0e0d
+dmenu.foreground:  #c7c7c4
+dmenu.selbackground: #926130
+dmenu.selforeground: #0e0e0d

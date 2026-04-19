@@ -1,0 +1,2 @@
+#!/bin/sh
+grep 'cpu ' /proc/stat | awk '{usage=($2+$3+$4)*100/($2+$3+$4+$5)} END {printf " 󰍛 %s%%", usage}'

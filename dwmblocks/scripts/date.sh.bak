@@ -1,0 +1,3 @@
+#!/bin/sh
+/usr/bin/date "+%d %b %y (%a) %I:%M %p"
+

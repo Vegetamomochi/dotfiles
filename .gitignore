@@ -1,0 +1,35 @@
+# Browsers — the 200mb culprit
+.config/BraveSoftware/
+.config/google-chrome/
+.config/chromium/
+.config/mozilla/
+.config/librewolf/
+.config/opera/
+.config/vivaldi/
+.config/torbrowser/
+
+# Pywal cache (regenerated on login, not needed in git)
+.cache/wal/
+config/wal/cache/
+
+# Secrets
+.ssh/
+.gnupg/
+*.key
+*.pem
+.env
+
+# Nvim plugin cache
+config/nvim/lazy-lock.json
+config/nvim/plugin/
+
+# Ranger personal state
+config/ranger/bookmarks
+config/ranger/history
+config/ranger/tagged
+
+# Junk
+*.swp
+*~
+__pycache__/
+*.pyc

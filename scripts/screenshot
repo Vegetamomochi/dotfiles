@@ -1,0 +1,4 @@
+#!/bin/bash
+FILE="$HOME/Screenshots/$(date +%Y%m%d_%H%M%S).png"
+mkdir -p "$HOME/Screenshots"
+maim -s -u "$FILE" && xclip -selection clipboard -t image/png -i "$FILE"

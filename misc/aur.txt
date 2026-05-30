@@ -1,0 +1,11 @@
+ani-cli
+chromium-widevine
+google-chrome
+masterpdfeditor-free
+micromamba-bin
+mirage
+paru-debug
+ranger_devicons-git
+sc-im
+sejda-desktop
+yay-debug

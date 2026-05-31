@@ -33,3 +33,8 @@ config/ranger/tagged
 *~
 __pycache__/
 *.pyc
+*.o
+*.orig
+*.rej
+*.diff
+suckless/dwm/swallow

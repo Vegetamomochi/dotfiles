@@ -1,0 +1,8 @@
+# Key Operations
+export FFF_KEY_RENAME="r"      # Press 'r' to rename files/folders
+export FFF_KEY_NEW_DIR="n"    # Press 'n' to create a new directory
+export FFF_KEY_DELETE="d"     # Press 'd' to delete files/folders
+
+# Standard navigation fixes
+export FFF_KEY_BACKSPACE="^?" # Forces backspace to go back directories properly
+export FFF_KEY_GO_BACK="h"    # Alternate key (h) to go back

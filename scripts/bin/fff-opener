@@ -1,0 +1,16 @@
+#!/bin/bash
+case "$1" in
+    *.txt|*.y|*.h)
+        nvim "$1"
+        ;;
+    *)
+        # Fallback to system openers for other file types
+        if command -v xdg-open >/dev/null; then
+            xdg-open "$1"
+        elif command -v open >/dev/null; then
+            open "$1"
+        else
+            nvim "$1"
+        fi
+        ;;
+esac

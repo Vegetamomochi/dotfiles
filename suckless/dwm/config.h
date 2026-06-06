@@ -151,6 +151,8 @@ static const Key keys[] = {
     { MODKEY,                       XK_p,          spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_Return,     spawn,          {.v = termcmd } },
     { MODKEY,                       XK_q,          killclient,     {0} },
+	{ MODKEY,                       XK_space,      togglefloating, {0} },
+	{ MODKEY|Mod1Mask,              XK_space,      setmfact,       {.f = 0.50} },
     { MODKEY|ShiftMask,             XK_BackSpace,  quit,           {0} },
     { MODKEY|ControlMask,           XK_backslash,  xrdb,           {.v = NULL } },
     STACKKEYS(MODKEY,                              focus)

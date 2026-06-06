@@ -19,7 +19,7 @@ export SOCKET="$UEBERZUG_TMP_DIR"/ueberzugpp-"$UB_PID".socket
 
 case $2 in
         *w) # wallpapermenu options
-                FZFARGS="enter:execute-silent($WALLPAPERMENU {}),ctrl-t:execute-silent($WALLPAPERMENU {} tendency),ctrl-f:execute-silent($WALLPAPERMENU {} flare),ctrl-d:execute-silent($WALLPAPERMENU {} dim),ctrl-g:execute-silent($WALLPAPERMENU {} grove),ctrl-w:execute-silent($WALLPAPERMENU {}),ctrl-e:become(gimp {+} > /dev/null 2>&1)"
+                FZFARGS="enter:execute($WALLPAPERMENU {}),ctrl-t:execute-silent($WALLPAPERMENU {} tendency),ctrl-f:execute-silent($WALLPAPERMENU {} flare),ctrl-d:execute-silent($WALLPAPERMENU {} dim),ctrl-g:execute-silent($WALLPAPERMENU {} grove),ctrl-w:execute-silent($WALLPAPERMENU {}),ctrl-e:become(gimp {+} > /dev/null 2>&1)"
                 ILABEL='·.·★⋆⁺₊⋆·.·★⋆⁺₊⋆𝖜𝖆𝖑𝖑𝖕𝖆𝖕𝖊𝖗 𝖒𝖊𝖓𝖚⋆⁺₊⋆★·.·⋆⁺₊⋆★·.·'
                 LABEL='[ᴇɴᴛᴇʀ·ᴘʏᴡᴀʟ ᴄᴛʀʟ 𝐝·ᴅɪᴍ 𝐟·ғʟᴀʀᴇ 𝐠·ɢʀᴏᴠᴇ 𝐭·ᴛᴇɴᴅᴇɴᴄʏ]' ;;
         *m) # imgmgk options

@@ -34,6 +34,12 @@ dmenu.background: $background
 dmenu.foreground: $foreground
 dmenu.selbackground: $color1
 dmenu.selforeground: $background
+dwm.normbgcolor: $background
+dwm.normfgcolor: $foreground
+dwm.normbordercolor: $color8
+dwm.selbgcolor: $color1
+dwm.selfgcolor: $background
+dwm.selbordercolor: $color2
 XEOF
 
 # --- Reload Xresources ---
@@ -41,5 +47,6 @@ xrdb -merge ~/.cache/wal/colors.Xresources
 
 # --- Reload st ---
 pkill -x -SIGUSR1 st
-
+# --- Reload dwm ---
+sleep 1 && kill -HUP $(pidof dwm) 2>/dev/null
 echo "Done! Colors updated for st and dmenu."

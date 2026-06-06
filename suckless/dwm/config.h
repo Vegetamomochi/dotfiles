@@ -22,12 +22,12 @@ static const char *fonts[] = {	"monospace:size=12"	,	"Hack Nerd Font Mono:size=1
 
 
 /* default colors used if xrdb is not loaded */
-static char normbgcolor[]           = "#2e3440";
-static char normbordercolor[]       = "#4c566a";
-static char normfgcolor[]           = "#d8dee9";
-static char selfgcolor[]            = "#eceff4";
-static char selbordercolor[]        = "#a3be8c";
-static char selbgcolor[]            = "#b48ead";
+static char normbgcolor[]           = "#0d1a0a";  /* bar bg — picom makes transparent */
+static char normbordercolor[]       = "#1a2e14";  /* dark forest border */
+static char normfgcolor[]           = "#a8c49a";  /* soft forest green text */
+static char selfgcolor[]            = "#c8dfa8";  /* selected fg — lighter green */
+static char selbordercolor[]        = "#5a9a3a";  /* selected border — brighter green */
+static char selbgcolor[]            = "#0d1a0a";  /* selected bg — same transparent */
 
 static char *colors[][3] = {
        /*               fg           bg           border   */

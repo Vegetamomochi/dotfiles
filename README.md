@@ -1,3 +1,8 @@
+<p>
+  <img src="misc/screenshot/fastfetch.png" width="49%">
+  <img src="misc/screenshot/desktop.png" width="49%">
+</p>
+
 # DOTFILES
 
 My personal Arch Linux + dwm desktop configuration. Minimal, keyboard-driven, and color-adaptive via pywal.

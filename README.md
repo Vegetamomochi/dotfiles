@@ -1,4 +1,4 @@
-# dotfiles
+# DOTFILES
 
 My personal Arch Linux + dwm desktop configuration. Minimal, keyboard-driven, and color-adaptive via pywal.
 
@@ -163,7 +163,6 @@ The pywal dwm patch reads colors from `~/.cache/wal/colors-wal.dwm` — regenera
 | Package | Purpose |
 |---------|---------|
 | `ani-cli` | Stream anime from the terminal |
-| `google-chrome` | Chrome browser |
 | `ranger_devicons-git` | File icons in ranger |
 | `sc-im` | Spreadsheet in the terminal |
 | `micromamba-bin` | Lightweight conda environment manager |
@@ -174,3 +173,12 @@ The pywal dwm patch reads colors from `~/.cache/wal/colors-wal.dwm` — regenera
 ## License
 
 Personal dotfiles — feel free to take anything useful.
+
+---
+
+## Inspiration
+
+Heavily inspired by **Bread** (BreadOnPenguins) — check out her work:
+
+- GitHub: [github.com/BreadOnPenguins](https://github.com/BreadOnPenguins)
+- YouTube: [youtube.com/@BreadOnPenguins](https://www.youtube.com/@BreadOnPenguins)

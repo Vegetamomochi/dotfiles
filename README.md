@@ -1,6 +1,6 @@
 <p>
-  <img src="misc/screenshots/fastfetch.png" width="49%">
-  <img src="misc/screenshots/desktop.png" width="49%">
+  <img src="misc/screenshots/fastfetch.png" width="99%">
+  <img src="misc/screenshots/desktop.png" width="99%">
 </p>
 
 # DOTFILES

@@ -48,7 +48,8 @@ dotfiles/
 ├── suckless/
 │   ├── dwm/         # Window manager source + config.h
 │   ├── dmenu/       # Launcher source + config.h
-│   └── st/          # Terminal source + config.h
+│   ├── st/          # Terminal source + config.h
+│   └── dwmblocks/   # Status bar source
 ├── .xinitrc         # X session startup
 ├── bashrc           # Shell config (pywal, ueberzug++, fff, PATH)
 ├── install.sh       # Bootstrap: build suckless tools, init pywal cache
@@ -60,18 +61,25 @@ dotfiles/
 
 ## Installation
 
+### 0. Prerequisites — install paru (AUR helper)
+
+```bash
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/paru.git
+cd paru && makepkg -si && cd ..
+```
+
+> **Note:** If paru compilation freezes (common in VMs with low RAM), use `yay-bin` instead:
+> ```bash
+> git clone https://aur.archlinux.org/yay-bin.git
+> cd yay-bin && makepkg -si && cd ..
+> ```
+
 ### 1. Clone the repo
 
 ```bash
 git clone https://github.com/Vegetamomochi/dotfiles ~/dotfiles
 cd ~/dotfiles
-```
-
-### Install paru (AUR helper)
-```bash
-sudo pacman -S --needed base-devel git
-git clone https://aur.archlinux.org/paru.git
-cd paru && makepkg -si && cd ..
 ```
 
 ### 2. Install packages
@@ -80,13 +88,13 @@ cd paru && makepkg -si && cd ..
 # Official packages
 sudo pacman -S --needed - < pkglist-official.txt
 
-# AUR packages (requires paru or yay)
+# AUR packages
 paru -S --needed - < pkglist-aur.txt
 ```
 
 ### 3. Run the install script
 
-Initializes the pywal cache (so dwm/dmenu don't choke on a blank install) and compiles the suckless tools:
+Initializes the pywal cache and compiles dwm, dmenu, st, and dwmblocks:
 
 ```bash
 chmod +x install.sh
@@ -95,18 +103,33 @@ chmod +x install.sh
 
 ### 4. Link configs
 
-Copy or symlink the contents of `config/` to `~/.config/` as needed, and place `bashrc` at `~/.bashrc`:
-
 ```bash
-cp bashrc ~/.bashrc
-# Example for a single app:
+cp ~/dotfiles/bashrc ~/.bashrc
+
+# Symlink app configs
 ln -s ~/dotfiles/config/dunst ~/.config/dunst
+ln -s ~/dotfiles/config/picom ~/.config/picom
+ln -s ~/dotfiles/config/ranger ~/.config/ranger
 ```
 
-### 5. Start the session
+### 5. Copy xinitrc
 
 ```bash
-# Log in via TTY and startx, or configure your display manager to launch dwm
+cp ~/dotfiles/.xinitrc ~/.xinitrc
+```
+
+> **Note:** Edit `~/.xinitrc` to match your display output. Run `xrandr` to find your output name (e.g. `HDMI-1`, `eDP-1`, `Virtual-1`) and update the xrandr line accordingly.
+
+### 6. Add a wallpaper
+
+```bash
+mkdir -p ~/Wallpaper
+# Copy your wallpaper to ~/Wallpaper/
+```
+
+### 7. Start the session
+
+```bash
 startx
 ```
 
@@ -114,13 +137,11 @@ startx
 
 ## Theming with pywal
 
-Pywal reads your wallpaper and generates a 16-color palette, then writes color files that dwm, dmenu, st, and dunst pick up automatically.
-
 ```bash
 # Set a new wallpaper and regenerate colors
 wal -i ~/Wallpaper/your-image.jpg
 
-# Or use the fuzzy wallpaper picker (fzf + ueberzug++ preview)
+# Or use the fuzzy wallpaper picker
 wallpaper
 ```
 
@@ -140,11 +161,9 @@ fff uses a custom opener defined in `bashrc`:
 export FFF_OPENER="$HOME/.local/bin/fff-opener"
 ```
 
-Edit `~/.local/bin/fff-opener` to control how different file types are opened (images → imv/feh, video → mpv, PDFs → zathura, etc.).
+Edit `~/.local/bin/fff-opener` to control how different file types are opened (images → feh, video → mpv, PDFs → zathura, etc.).
 
 ### ueberzug++ image previews in fff
-
-The X11 backend is set in `bashrc`:
 
 ```bash
 export UEBERZUG_BACKEND=x11
@@ -156,14 +175,11 @@ Change to `wayland` if running a Wayland compositor.
 
 ## Suckless Tools
 
-dwm, dmenu, and st are patched and configured via their respective `config.h` files. To apply changes:
-
 ```bash
 cd ~/dotfiles/suckless/dwm
 # Edit config.h
 sudo make clean install
-
-# Same for dmenu and st
+# Same for dmenu, st, and dwmblocks
 ```
 
 The pywal dwm patch reads colors from `~/.cache/wal/colors-wal.dwm` — regenerated automatically when you run `wal`.
@@ -174,11 +190,9 @@ The pywal dwm patch reads colors from `~/.cache/wal/colors-wal.dwm` — regenera
 
 | Package | Purpose |
 |---------|---------|
-| `ani-cli` | Stream anime from the terminal |
+| `ueberzugpp` | Image previews in terminal |
+| `fff` | Fast terminal file manager |
 | `ranger_devicons-git` | File icons in ranger |
-| `sc-im` | Spreadsheet in the terminal |
-| `micromamba-bin` | Lightweight conda environment manager |
-| `mirage` | Fast image viewer |
 
 ---
 

@@ -36,4 +36,7 @@ cd ~/dotfiles/suckless/dwm && sudo make clean install
 # Compile st globally
 cd ~/dotfiles/suckless/st && sudo make clean install
 
+# Compile dwmblocks globally
+cd ~/dotfiles/suckless/dwmblocks && sudo make clean install
+
 echo "Success! Your environment has been completely built and initialized."

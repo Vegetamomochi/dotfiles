@@ -2,7 +2,6 @@ acpid
 alsa-firmware
 alsa-utils
 android-file-transfer
-ani-cli
 atomicparsley
 base
 base-devel
@@ -14,7 +13,6 @@ bluez
 bluez-obex
 bluez-utils
 brightnessctl
-chromium-widevine
 cmake
 code
 dkms
@@ -33,7 +31,6 @@ fio
 firefox
 flatpak
 git
-google-chrome
 grub
 gst-libav
 gst-plugins-bad
@@ -64,10 +61,7 @@ linux
 linux-firmware
 linux-headers
 maim
-masterpdfeditor-free
 micro
-micromamba-bin
-mirage
 mpc
 mpd
 mtpfs
@@ -105,17 +99,14 @@ python-seaborn
 qbittorrent
 qutebrowser
 ranger
-ranger_devicons-git
 redshift
 reflector
 ripgrep
 rofi
 rsync
 ruff
-sc-im
 scrcpy
 scrot
-sejda-desktop
 slock
 socat
 sof-firmware

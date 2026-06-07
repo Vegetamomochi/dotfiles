@@ -67,6 +67,13 @@ git clone https://github.com/Vegetamomochi/dotfiles ~/dotfiles
 cd ~/dotfiles
 ```
 
+### Install paru (AUR helper)
+```bash
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/paru.git
+cd paru && makepkg -si && cd ..
+```
+
 ### 2. Install packages
 
 ```bash

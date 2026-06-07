@@ -1,0 +1,9 @@
+ani-cli
+chromium-widevine
+google-chrome
+masterpdfeditor-free
+micromamba-bin
+mirage
+ranger_devicons-git
+sc-im
+sejda-desktop
